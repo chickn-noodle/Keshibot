@@ -16,7 +16,7 @@ module.exports = {
             return
         }
         const text = message.content.slice(2).split(" ")
-        console.log(text)
+        // console.log(text)
         switch (text[0]) {
             case "blame":
                 Blame(text, message)

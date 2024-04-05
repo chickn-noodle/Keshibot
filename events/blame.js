@@ -21,7 +21,7 @@ module.exports = {
         }
         let episode
         if (text[2]) {
-            console.log("Ep given,", text[2])
+            // console.log("Ep given,", text[2])
             try {
                 episode = fulldata.episodes[parseInt(text[2]) - fulldata.episodes[0].number]
             }
@@ -34,7 +34,7 @@ module.exports = {
         } else {
             episode = fulldata.episodes[fulldata.episodes.filter(item => item.released === false)[0].number - fulldata.episodes[0].number]
         }
-        console.log(episode)
+        // console.log(episode)
 
         let rollString = "" 
         for (i in episode.staff){
@@ -46,7 +46,7 @@ module.exports = {
             }
 
         }
-        console.log("building embed")
+        // console.log("building embed")
         const emb = new EmbedBuilder()
             .setTitle(fulldata.name + " #" + episode.number)
             .setColor("#ffffff")
@@ -55,7 +55,7 @@ module.exports = {
                 { name: "Status", value: rollString},
             )
             .setTimestamp()
-        console.log("sending")
+        // console.log("sending")
         message.channel.send({ embeds: [emb] });
     }
 }

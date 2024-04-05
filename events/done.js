@@ -5,11 +5,11 @@ const { Blame } = require('./blame.js')
 module.exports = {
     async Done(text, message) {
         if (!text[1]) {
-            console.log("no pos")
+            // console.log("no pos")
             message.reply("Please give a roll")
             return
         } else if (!text[2]) {
-            console.log("No series")
+            // console.log("No series")
             message.reply("Please give a series.")
             return
         }
