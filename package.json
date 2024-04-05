@@ -9,6 +9,7 @@
   "license": "ISC",
   "description": "A server customized discord bot for the Keshigomu Scans server",
   "dependencies": {
-    "discord.js": "^14.14.1"
+    "discord.js": "^14.14.1",
+    "express": "^4.19.2"
   }
 }

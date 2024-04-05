@@ -4,7 +4,11 @@ const path = require('node:path');
 const { Client, Collection, Events, GatewayIntentBits, Intents } = require('discord.js');
 // const { token } = require('./config.json');
 const token = process.env.token
+
+// for the TCP health checks
 const port = process.env.PORT || 8000
+const express = require('express')
+const app = express()
 
 // Create a new client instance
 // const allIntents = new Intents(34511); // create an intent object for all intents
