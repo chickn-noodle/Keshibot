@@ -1,4 +1,6 @@
-const { Prefix, deschtimesToken, prefix} = require('../config.json');
+// const { Prefix, deschtimesToken, prefix} = require('../config.json');
+const prefix = process.env.prefix
+const deschtimesToken = process.env.deschtimesToken
 const { EmbedBuilder } = require('discord.js');
 
 // text command list

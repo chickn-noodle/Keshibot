@@ -2,7 +2,8 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const { Client, Collection, Events, GatewayIntentBits, Intents } = require('discord.js');
-const { token } = require('./config.json');
+// const { token } = require('./config.json');
+const token = process.env.token
 
 // Create a new client instance
 // const allIntents = new Intents(34511); // create an intent object for all intents
