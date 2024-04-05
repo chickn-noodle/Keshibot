@@ -1,0 +1,48 @@
+const { SlashCommandBuilder } = require('discord.js');
+const { deschtimesToken } = require('../../config.json')
+const { EmbedBuilder } = require('discord.js');
+
+// fetch shows
+let groupData
+let showList
+setTimeout(() => {
+    console.log("fetching group data")
+    groupData = fetch(`https://deschtimes.com/api/v1/groups/${deschtimesToken}.json`)
+    .then(data => data.json())
+
+    showList = groupData.shows.map(show => show.name).map(title => { return {name: title, value: title } })
+    console.log(showList)
+}, 10000)
+
+
+module.exports = {
+	data: new SlashCommandBuilder()
+		.setName('blame')
+		.setDescription('get series info')
+        .addStringOption(option => 
+            option.setName("manga")
+                .setDescription("Which manga to fetch")
+                .setRequired(true)
+                .addChoices(...(groupData.shows.map(show => show.name).map(title => { return {name: title, value: title } })))
+        ),
+	async execute(interaction) {
+        console.log("start - fetching")
+        await interaction.deferReply();
+        const fulldata = await fetch(`https://deschtimes.com/api/v1/groups/${deschtimesToken}/shows/Makigama%20no%20Pandora.json`)
+        .then(data => data.json())
+        const unreleased = fulldata.episodes.filter(item => item.released === false)
+
+        console.log("building embed")
+        const emb = new EmbedBuilder()
+            .setTitle(fulldata.name)
+            .setColor("#ffffff")
+            .setImage(fulldata.poster)
+            .addFields(
+                { name: "Number", value: String(unreleased[0].number), inline:true},
+                { name: "ID", value: String(unreleased[0].id), inline:true},
+                { name: "Season", value: String(unreleased[0].season), inline:true}
+            )
+        console.log("sending")
+		await interaction.editReply({ embeds: [emb] })
+	},
+};
