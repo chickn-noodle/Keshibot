@@ -4,6 +4,7 @@ const path = require('node:path');
 const { Client, Collection, Events, GatewayIntentBits, Intents } = require('discord.js');
 // const { token } = require('./config.json');
 const token = process.env.token
+const port = process.env.PORT || 8000
 
 // Create a new client instance
 // const allIntents = new Intents(34511); // create an intent object for all intents
@@ -66,6 +67,11 @@ for (const file of eventFiles) {
 		client.on(event.name, (...args) => event.execute(...args));
 	}
 }
+
+// listen for TCP Health checks
+app.listen(port, () => {
+	console.log(`App is listening on port ${port}`)
+  })
 
 // Log in to Discord with your client's token
 client.login(token);
