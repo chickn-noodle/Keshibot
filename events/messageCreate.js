@@ -1,4 +1,5 @@
 // const { Prefix, deschtimesToken, prefix} = require('../config.json');
+const dotenv = require('dotenv');
 const prefix = process.env.prefix
 const deschtimesToken = process.env.deschtimesToken
 const { EmbedBuilder } = require('discord.js');
@@ -32,8 +33,8 @@ module.exports = {
                 Release(text, message)
                 break
             case "createfile":
-                CreateFile()
-                break
+                CreateFile(message)
+                break   
         }
     }
 }

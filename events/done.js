@@ -1,5 +1,6 @@
 // const { deschtimesToken } = require('../config.json');
 const deschtimesToken = process.env.deschtimesToken
+const dotenv = require('dotenv');
 const { Blame } = require('./blame.js')
 
 module.exports = {
