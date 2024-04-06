@@ -9,7 +9,6 @@ const { Blame } = require('./blame.js')
 const { Done } = require('./done.js')
 const { Undone } = require('./undone.js')
 const { Release } = require("./release.js")
-const { CreateFile } = require("./createfile.js")
 
 module.exports = {
     name:   'messageCreate',
@@ -32,9 +31,6 @@ module.exports = {
             case "release":
                 Release(text, message)
                 break
-            case "createfile":
-                CreateFile(message)
-                break   
         }
     }
 }
