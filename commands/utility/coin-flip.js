@@ -7,8 +7,7 @@ module.exports = {
 		.addStringOption(option =>
 			option.setName('options')
 				.setDescription('which options to choose from (comma separated)')
-                .setRequired(true))
-        .setDefaultMemberPermissions(PermissionFlagsBits.MentionEveryone),
+                .setRequired(true)),
 	async execute(interaction) {
         if(Math.floor(Math.random() * 1000) == 0) {
             interaction.reply("The coin landed on its side!")
