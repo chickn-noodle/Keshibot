@@ -20,7 +20,7 @@ module.exports = {
         .setDefaultMemberPermissions(PermissionFlagsBits.MentionEveryone),
 	async execute(interaction) {
         // await interaction.deferReply();
-        let appURL;
+        let appUrl;
         if(interaction.options.getString('series') === 'moto') {
             appUrl = motoDirLink;
         } else if (interaction.options.getString('series') === 'chi') {
