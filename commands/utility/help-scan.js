@@ -10,7 +10,7 @@ module.exports = {
     async execute(interaction) {
         const helpEmb = new EmbedBuilder()
             .setTitle("Scanlation Commands")
-            .setDescription("Here are a list of all my scanlation related commands")
+            .setDescription("Here is a list of all my scanlation related commands")
             .setFields(
                 { name:"__**Text Commands**__", value:`
                 *prefix: ${prefix}*

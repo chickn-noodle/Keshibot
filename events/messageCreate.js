@@ -16,7 +16,7 @@ module.exports = {
         if (message.content.substring(0,2) != prefix) {
             return
         }
-        const text = message.content.slice(2).split(" ")
+        const text = message.content.toLowerCase().slice(2).split(" ")
         // console.log(text)
         switch (text[0]) {
             case "blame":

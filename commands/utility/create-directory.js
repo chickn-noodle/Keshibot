@@ -1,5 +1,10 @@
 const { SlashCommandBuilder, PermissionFlagsBits } = require('discord.js');
 
+const dotenv = require('dotenv');
+dotenv.config();
+const motoDirLink = process.env.motoDirLink
+const chiDirLink = process.env.chiDirLink
+
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('create-directory')
@@ -17,9 +22,9 @@ module.exports = {
         // await interaction.deferReply();
         let appURL;
         if(interaction.options.getString('series') === 'moto') {
-            appUrl = 'https://script.google.com/macros/s/AKfycbyRZgfMn-khz2ITEnXL_07FbsYESjo2SXSIs5bcv-9opJZoQtY796gpQqK1ZAhWuD_yWQ/exec';
+            appUrl = motoDirLink;
         } else if (interaction.options.getString('series') === 'chi') {
-            appUrl = 'https://script.google.com/macros/s/AKfycbxE6SD0_YyD0OTpmK1u6NE5Fzb85RECxEGcfHHC85OEI4lv5SQmMe1BrSP6WpfxHsRr/exec';
+            appUrl = chiDirLink;
         }
         await fetch(appUrl)
                     .then(data => console.log(data))
