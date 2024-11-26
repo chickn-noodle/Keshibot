@@ -14,8 +14,7 @@ module.exports = {
 				.setDescription('which series to create the folder for')
                 .setRequired(true)
                 .addChoices(
-                    { name: 'Harapeko', value: 'harapeko' },
-                    { name: "Chi", value: 'chi'}
+                    { name: 'Harapeko', value: 'harapeko' }
                 ))
         .setDefaultMemberPermissions(PermissionFlagsBits.MentionEveryone),
 	async execute(interaction) {
@@ -26,7 +25,6 @@ module.exports = {
         } else if (interaction.options.getString('series') === 'chi') {
             appUrl = chiDirLink;
         }
-        console.log(appUrl)
         await fetch(appUrl)
                     .then(data => console.log(data))
                     .then(interaction.reply("Directory Created."));
