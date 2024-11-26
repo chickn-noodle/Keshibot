@@ -14,18 +14,19 @@ module.exports = {
 				.setDescription('which series to create the folder for')
                 .setRequired(true)
                 .addChoices(
-                    { name: 'Moto', value: 'moto' },
+                    { name: 'Harapeko', value: 'harapeko' },
                     { name: "Chi", value: 'chi'}
                 ))
         .setDefaultMemberPermissions(PermissionFlagsBits.MentionEveryone),
 	async execute(interaction) {
         // await interaction.deferReply();
         let appUrl;
-        if(interaction.options.getString('series') === 'moto') {
+        if(interaction.options.getString('series') === 'harapeko') {
             appUrl = motoDirLink;
         } else if (interaction.options.getString('series') === 'chi') {
             appUrl = chiDirLink;
         }
+        console.log(appUrl)
         await fetch(appUrl)
                     .then(data => console.log(data))
                     .then(interaction.reply("Directory Created."));
