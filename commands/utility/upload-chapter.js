@@ -4,7 +4,7 @@ const {spawn} = require('child_process')
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('upload-chapter')
-		.setDescription('upload a manga chapter to Mangadex')
+		.setDescription('upload a chapter to Mangadex')
         .addStringOption(option => {
             return option.setName('number')
                 .setDescription('chapter number')
