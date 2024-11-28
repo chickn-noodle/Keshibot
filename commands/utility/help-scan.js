@@ -22,7 +22,7 @@ module.exports = {
                 { name: " ", value: " ", inline: false},
                 { name: "__**Slash Commands**__", value:`
                 \`/help-scan\`: Displays this embed
-                \`/create-directory [series]\`: Creates a new folder in the Google drive, including the required file templates and subfolders, for the given series (currently only for moto or chi)
+                \`/create-directory [series]\`: Creates a new folder in the Google drive, including the required file templates and subfolders, for the given series (currently only for Harapeko)
                 `, inline: false },
             )
             .setColor('0ed8ea');
