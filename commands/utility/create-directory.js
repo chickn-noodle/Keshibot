@@ -2,7 +2,7 @@ const { SlashCommandBuilder, PermissionFlagsBits } = require('discord.js');
 
 const dotenv = require('dotenv');
 dotenv.config();
-const motoDirLink = process.env.motoDirLink
+const hpkDirLink = process.env.hpkDirLink
 const chiDirLink = process.env.chiDirLink
 
 module.exports = {
@@ -21,7 +21,7 @@ module.exports = {
         // await interaction.deferReply();
         let appUrl;
         if(interaction.options.getString('series') === 'harapeko') {
-            appUrl = motoDirLink;
+            appUrl = hpkDirLink;
         } else if (interaction.options.getString('series') === 'chi') {
             appUrl = chiDirLink;
         }

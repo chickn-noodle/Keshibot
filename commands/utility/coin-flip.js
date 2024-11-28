@@ -16,7 +16,6 @@ module.exports = {
 
         const optionArray = interaction.options.getString('options').split(",").map(element => element.trim());
         // console.log(optionArray);
-        
         interaction.reply(`The coin chose ${optionArray[Math.floor(Math.random() * optionArray.length)]}!`)
     }
 };
