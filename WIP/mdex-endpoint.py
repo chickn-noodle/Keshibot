@@ -13,9 +13,6 @@ if title == "NONE":
 if volume == "NONE":
     volume = None
 
-print(title)
-print(volume)
-
 # title = "hi"
 # chapNum = "10"
 # volume = "10"

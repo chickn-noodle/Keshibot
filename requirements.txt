@@ -1,2 +1,5 @@
+setuptools>=42
+wheel
+
 requests
 python-dotenv
