@@ -8,7 +8,7 @@ const { token } = require('./config.json');
 // const token = process.env.token
 
 // for the TCP health checks
-const port = process.env.PORT || 8000
+const port = process.env.PORT
 const express = require('express')
 const app = express()
 
