@@ -2,10 +2,9 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const { Client, Collection, Events, GatewayIntentBits, Intents } = require('discord.js');
-// const dotenv = require('dotenv');
-// dotenv.config();
-const { token } = require('./config.json');
-// const token = process.env.token
+const dotenv = require('dotenv');
+dotenv.config();
+const token = process.env.token
 
 // for the TCP health checks
 const port = process.env.PORT
