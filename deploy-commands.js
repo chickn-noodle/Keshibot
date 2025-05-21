@@ -1,5 +1,4 @@
 const { REST, Routes } = require('discord.js');
-// const { clientId, token } = require('./config.json');
 
 const dotenv = require('dotenv');
 dotenv.config();
@@ -49,5 +48,3 @@ const rest = new REST().setToken(token);
 		console.error(error);
 	}
 })();
-
-const run = require("./index.js")
