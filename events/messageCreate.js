@@ -14,6 +14,8 @@ module.exports = {
     name:   'messageCreate',
     async execute(message) {
         if (message.content.substring(0,2) != prefix) {
+            
+
             return
         }
         const text = message.content.toLowerCase().slice(2).split(" ")
