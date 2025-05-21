@@ -74,10 +74,23 @@ for (const file of eventFiles) {
 	}
 }
 
-// listen for TCP Health checks
-app.listen(port, () => {
-	console.log(`App is listening on port ${port}`)
-  })
+// ...
+// Define your health check route
+app.get('/health', (req, res) => {
+    if (client.isReady()) { // Check if the Discord client is ready
+        res.status(200).send('OK');
+    } else {
+        res.status(503).send('Bot not ready'); // Service Unavailable
+    }
+});
 
-// Log in to Discord with your client's token
+// Log in to Discord
 client.login(token);
+
+// After successful login, start the Express server
+client.once(Events.ClientReady, c => {
+    console.log(`Ready! Logged in as ${c.user.tag}`);
+    app.listen(port, () => {
+        console.log(`App is listening on port ${port} for health checks.`);
+    });
+});
