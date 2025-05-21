@@ -11,6 +11,7 @@ const port = process.env.PORT
 const express = require('express')
 const app = express()
 
+
 // Create a new client instance
 // const allIntents = new Intents(34511); // create an intent object for all intents
 const client = new Client({
