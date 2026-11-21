@@ -23,10 +23,13 @@ module.exports = {
         if(interaction.options.getString('series') === 'harapeko') {
             appUrl = hpkDirLink;
         } else {
-            interaction.reply("Invalid Series input.");
+            return interaction.reply("Invalid Series input.");
         }
-        await fetch(appUrl)
-                    .then(data => console.log(data))
-                    .then(interaction.reply("Directory Created."));
+		const response = await fetch(appUrl);
+		if (response.status === 200) {
+			await interaction.reply("Directory Created.");
+		} else {
+			await interaction.reply("Uh Oh, something wen't wrong.");
+		}
 	},
 };
