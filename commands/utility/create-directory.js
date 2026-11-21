@@ -22,8 +22,8 @@ module.exports = {
         let appUrl;
         if(interaction.options.getString('series') === 'harapeko') {
             appUrl = hpkDirLink;
-        } else if (interaction.options.getString('series') === 'chi') {
-            appUrl = chiDirLink;
+        } else {
+            interaction.reply("Invalid Series input.");
         }
         await fetch(appUrl)
                     .then(data => console.log(data))
